@@ -10,10 +10,11 @@ namespace seesharp.Controllers
              return View();
          }
 
-         public IActionResult Welcome(string hello = "hello", bool iam = false)
+         public IActionResult Welcome(string name = "user", int numTimes = 1)
          {
+            ViewData["Message"] = $"HIII mr or ms. {name}"; 
+            ViewData["NumTimes"] = numTimes;
             return View();
-            //  return HtmlEncoder.Default.Encode($"{hello}, youre not {iam}"); 
          }
     }
 }
